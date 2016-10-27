@@ -20,8 +20,8 @@ import one.nio.mgt.Management;
 import one.nio.util.ByteArrayBuilder;
 import one.nio.util.Hex;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -31,7 +31,7 @@ import java.io.OutputStream;
 import java.util.zip.CRC32;
 
 public final class NativeLibrary implements NativeLibraryMXBean {
-    private static final Log log = LogFactory.getLog(NativeLibrary.class);
+    private static final Logger log = LoggerFactory.getLogger(NativeLibrary.class);
 
     public static final boolean IS_SUPPORTED = isSupportedOs() && loadNativeLibrary();
 

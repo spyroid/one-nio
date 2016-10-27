@@ -16,8 +16,8 @@
 
 package one.nio.cluster;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,7 +29,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class WeightCluster<T extends ServiceProvider> implements Cluster<T> {
-    protected static final Log log = LogFactory.getLog(WeightCluster.class);
+    protected static final Logger log = LoggerFactory.getLogger(WeightCluster.class);
 
     protected final Random random = new Random();
     protected final HashMap<T, Integer> providers = new HashMap<T, Integer>();

@@ -18,11 +18,11 @@ package one.nio.gen;
 
 import one.nio.mgt.Management;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.objectweb.asm.MethodVisitor;
 import org.objectweb.asm.Opcodes;
 import org.objectweb.asm.Type;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -34,7 +34,7 @@ import java.lang.reflect.Modifier;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class BytecodeGenerator extends ClassLoader implements BytecodeGeneratorMXBean, Opcodes {
-    private static final Log log = LogFactory.getLog(BytecodeGenerator.class);
+    private static final Logger log = LoggerFactory.getLogger(BytecodeGenerator.class);
 
     public static final BytecodeGenerator INSTANCE = new BytecodeGenerator();
     public static final String MAGIC_CLASS = "sun/reflect/MagicAccessorImpl";

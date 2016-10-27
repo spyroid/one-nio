@@ -22,8 +22,8 @@ import one.nio.lock.RWLock;
 import one.nio.util.JavaInternals;
 import one.nio.util.QuickSelect;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import sun.misc.Unsafe;
 
 import java.util.Arrays;
@@ -33,7 +33,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.TimeoutException;
 
 public abstract class OffheapMap<K, V> implements OffheapMapMXBean {
-    protected static final Log log = LogFactory.getLog(OffheapMap.class);
+    protected static final Logger log = LoggerFactory.getLogger(OffheapMap.class);
     protected static final Unsafe unsafe = JavaInternals.unsafe;
     protected static final long byteArrayOffset = JavaInternals.byteArrayOffset;
     protected static final long MB = 1024 * 1024;

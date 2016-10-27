@@ -16,8 +16,8 @@
 
 package one.nio.server;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadFactory;
@@ -26,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 final class WorkerPool extends ThreadPoolExecutor implements ThreadFactory, Thread.UncaughtExceptionHandler {
-    private static final Log log = LogFactory.getLog(WorkerPool.class);
+    private static final Logger log = LoggerFactory.getLogger(WorkerPool.class);
 
     private final AtomicInteger index;
 

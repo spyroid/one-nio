@@ -18,11 +18,11 @@ package one.nio.server;
 
 import one.nio.net.Session;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 final class CleanupThread extends Thread {
-    private static final Log log = LogFactory.getLog(CleanupThread.class);
+    private static final Logger log = LoggerFactory.getLogger(CleanupThread.class);
 
     final Server server;
     final long keepAlive;
